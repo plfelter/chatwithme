@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "chatwithme"
+version = "0.1.0"
+description = "Simple chat connected to my AI assistant"
+authors = ["plfelter <hurdle0.foggier@icloud.com>"]
+license = "Resources"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
