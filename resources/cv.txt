@@ -1,0 +1,161 @@
+EXPERIENCE PROFESSIONELLE
+
+
+Auto-formation
+Toulouse (Janvier 2023 -  Avril 2025)
+Développement data et web. A destination des freelance et petites entreprises.
+Sites construits et administrés sur CMS (Wordpress, woocommerce...).
+Bases de données SQLite, MySQL.
+Web dev: NodeJS, Django, HTTP (REST) API, Postman, Python, PHP, JavaScript, HTML, CSS, JSON
+Excel (VBA) et automatisations avec Python.
+Connections API IA et LLM (ChatGPT, Mistral)
+Configurations réseaux (TCP/IP).
+Configurations serveur web et serveur mail (OVH...), Bash, Unix, Linux
+
+Rénovation
+
+ARGANS
+Toulouse (4 Avril 2022 - 30 Novembre 2023)
+Ingénieur scientifique pour l’observation de la Terre (Earth Observation Scientist).
+Développement d’une suite d’outils Python permettant le traitement et la visualisation de données satellites.
+Spécialisé sur le satellite SMOS, processeur de salinité.
+Projet principal: traitement de données L1c pour comparaison à des données modélisées. Calcul statistiques et visualisation.
+* Développement en Python, environnement Linux, Bash, UNIX
+* Traitement massif de données (> Tera Byte). Optimisation des performances.
+* Traitement et visualisation de données géo-référencées (matplotlib, geopandas, Leaflet).
+* Librairies Python: Cython, Numpy, Pandas, Xarray, Dask.
+* Gestion de projet Agile. Développement continu. CI/CD. Git. Gitlab/Github. Poetry, pyenv.
+* Déploiement serveur distant: Docker
+* Modernisation de code “héritage”, mise à jour des documentations.
+* Rétro ingénierie pour comprendre le fonctionnement des codes hérités.
+* Gestion, développement, debug de base de données PostgreSQL.
+* Documentation technique, versionnée (markdown): “doc as code”. Github Pages, Sphinx, reStructuredText, MyST Markdown.
+* Tutorat, accueil et formation des jeunes diplômés.
+
+Education Nationale
+Grenoble (24 Janvier 2022 - 1er Avril 2022)
+Professeur mathématiques et physique chimie: 2 classes de 2nde professionnelle, 1 classe de Terminale CAP.
+Mise au point / rédaction des cours et TP (les élèves n'ont pas de livre !). Tenue de la classe. Accompagnement des élèves (motivation, explications).
+
+ST Microelectronics
+Grenoble (27 Novembre 2017 - 30 Novembre 2021)
+Responsable algorithmique: développement et validation d’un système de détection de présence pour ordinateurs portables. Visualisation des données. Promotion du produit, stratégie et support client à l’international (Japon, Chine, EUA).
+Plusieurs millions de plateformes équipées en 3 ans chez 4 des plus grands fabricants au monde. Mots-clefs recherche internet: Presence ST time-of-flight
+
+Presence: projet visant à reconnaître la présence d’un utilisateur de laptop à l’aide d’un capteur Time of Flight. Capteurs mono et multi zones. Equipe internationale (Europe, USA - Santa Clara, Chine, Taiwan).
+* Automatisation de la validation d’un système de capteur (darkroom, GUI tests en production)
+* Capture de données et communication inter-systèmes (USB serial, I2C)
+* Programmation embarquée (langage C) environnement STM32
+* Visualisation de données (temps réel et post-capture): Python, PyQt, pyqtgraph, Numpy, OpenCV
+* Interface et expérience utilisateur
+* Base de données (serveur distant, MongoDB, pyMongo)
+* Responsable algorithme, R&D, implémentation en C (embarqué)(image processing).
+* Spécification, développement et validation d’algorithme tiers (Scene Change Indicator).
+* Evaluation automatique de l’algorithme (Numpy, rapport de validation généré automatiquement)
+* « C code wrapping » pour Python
+* Collection de données, labeling, tag, visualisation (DBbridge GUI)
+* Système de validation et détection automatique de régressions (Python, Batch)
+* Machine learning: réseau de neurones simples (CNN)
+* Rédaction de rapports, analyses détaillées de cas.
+* Rédaction de documentation (Wiki)
+* Tutorat (stagiaires, nouveaux embauchés)
+* Présentations/communication interne
+* Promotion du produit (stratégie, promotion vidéo, visites client à l’international)
+* Récolte des besoins clients et vision
+* Support client (international, déplacement physique et à distance)
+* Veille technologique et benchmark
+* Gestion de projet et report avancement à la hiérarchie
+
+
+PRIX / RECOMPENSES
+* Co-inventeur de plusieurs brevets (US, FR et EU)  Utiliser les fonctions de recherche par nom de https://data.inpi.fr et https://ppubs.uspto.gov/pubwebapp/static/pages/ppubsbasic.html ou https://patents.justia.com/inventor/pierre-loic-felter Numéros:
+    * US 12,001,259 B2
+    * US 12,016,670 B2
+    * US 2021/0298637 A1
+    * US 2021/0302563 A1
+    * US 2023/0314607 A1
+    * US 2024/0345644 A1
+    * FR 3 134 201 - B1
+    * EP 4 254 250 - A1 
+* Récompensé du 1er prix au STAR Team Award de ST Microelectronics, pour le projet “Worldwide First Direct ToF Multi-Zone Product Design Win at Samsung and Leading PC OEMs”
+
+FORMATION ACADEMIQUE
+
+
+Linköping University
+Double-diplôme en génie électrique, Suède (2016 - 2017)
+Matières:
+* Medical Image Analysis
+* Biomechanics
+* Digital Image Processing
+* Computer Vision
+Projets (Python):
+* Algorithme de tracking video
+* Analyse d’image pour la reconstruction de scène 3D
+* Implémentation d’algorithmes flux optique
+Projet de fin d’études
+Analyse automatique d’images IRM de l’aorte. Développement d’outils Matlab de visualisation et d’analyse. Aide à la capture d’images IRM.
+
+
+
+ Phelma - Grennoble INP
+Diplôme de génie biomédical, Grenoble (2014 - 2016)
+ Formation avancée en physique, électronique, télécommunications:
+* BE d'électronique
+* Automatique
+* Electronique
+* Logique
+* Ordi & microprocesseurs
+* Traitement du signal
+* TP automatique & traitement du signal
+* TP électronique
+* Mathématiques et Informatique
+* Probabilités & statistiques
+* Transformées intégrales
+* Programmation structure algorithmique (C)
+* Electromagnétisme
+* Phénomènes quantiques & statistiques
+* Structures & propriétés des matériaux
+* TP physique
+* Physique du solide
+
+Spécialisation en biomédical :
+* Electronics for measurement systems
+* Converters (CAN, CNA)
+* BE Electronics for measurement systems
+* Mechanics
+* Numerical methods : simulations
+* Thermodynamics
+* Physics of semiconductors and semiconductor devices
+* Optics
+* Introduction to subatomic physics
+* Molecular biology
+* Labwork : Molecular biology and biochemistry
+* Data acquisition (Labview)
+* Quality-reliability
+* Signal processing lab
+* Digital signal processing
+* Nuclear Magnetic Resonance and Magnetic Resonance
+* Imaging
+* Medical imaging labwork
+* Particle-Rays Matter Interaction
+* Machine communication and networks
+* Numerical methods : simulation project
+* Image sensors
+* Cell biology labwork
+* Physiology and bioenergetics
+* Cell biology
+* Molecular biology project
+
+ Cycle Préparatoire Polytechnique - INPG
+Préparation générale scientifique, Grenoble (2012 - 2014)
+
+ Lycée Jean Prevost
+Baccalauréat scientifique, mention Très Bien (2012)  
+
+INTERETS
+Ski et sport en montagne. Voile. Beach volley. Diplômé de second cycle en piano. Montage video. Rénovation. Théâtre.
+
+CONTACT
+email: 'plfelter@proton.me'
+numero de téléphone: '06 33 88 56 90'
