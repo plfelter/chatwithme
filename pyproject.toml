@@ -8,6 +8,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+mistralai = "^1.7.0"
+python-fasthtml = "^0.12.14"
 
 
 [build-system]
