@@ -1,0 +1,109 @@
+#!/bin/bash
+
+# Deployment script to install the app on a remote server and start to serve it
+# Prerequisite: ensure the client computer has its public key on the remote deployment server
+
+# Function to print formatted messages
+print_message() {
+    echo -e "\n\033[1;34m==>\033[0m \033[1m$1\033[0m"
+}
+
+# Function to print success messages
+print_success() {
+    echo -e "\033[1;32m✓\033[0m $1"
+}
+
+# Function to print error messages
+print_error() {
+    echo -e "\033[1;31m✗\033[0m $1"
+    exit 1
+}
+
+print_message "Starting deployment process"
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+SSH_PORT="58734"
+SSH_USER="ubuntu"
+SSH_HOST="37.59.101.84"
+
+HOST="$SSH_USER@$SSH_HOST"
+
+APP_NAME="chatwithme"
+
+
+LOCAL_REPO_DIR=$(dirname "$SCRIPT_DIR")
+REMOTE_REPO_DIR="/home/ubuntu/$APP_NAME"
+LOCAL_DOCKER_INSTALL_SCRIPT_PATH="$SCRIPT_DIR/install-docker-ubuntu"
+REMOTE_DOCKER_INSTALL_SCRIPT_PATH="/tmp/install-docker-ubuntu"
+SERVER_LISTENING_PORT="80"
+CONTAINER_PORT="8000"
+DOCKER_IMAGE_NAME="chatwithme-image"
+DOCKER_CONTAINER_NAME="chatwithme-container"
+DOCKER_APP_REPO_DIR="/chatwithme-app"
+DOCKER_APP_DB_PATH="$DOCKER_APP_REPO_DIR/$APP_DB_PATH"
+DOCKER_BIND_MOUNT_DB_HOST_DIR="$(dirname -- "$REMOTE_REPO_DIR/$APP_DB_PATH")"
+DOCKER_BIND_MOUNT_DB_CONTAINER_DIR="$(dirname -- "$DOCKER_APP_REPO_DIR/$APP_DB_PATH")"
+
+
+
+print_message "Configuring deployment to $HOST on port $SSH_PORT"
+
+# Remotely install docker if not available
+print_message "Installing Docker on remote server"
+echo "Copying Docker installation script to remote server..."
+if scp -P $SSH_PORT "$LOCAL_DOCKER_INSTALL_SCRIPT_PATH" $HOST:$REMOTE_DOCKER_INSTALL_SCRIPT_PATH; then
+    print_success "Docker installation script copied to $REMOTE_DOCKER_INSTALL_SCRIPT_PATH"
+else
+    print_error "Failed to copy Docker installation script"
+fi
+
+print_message "Running Docker installation script on remote server..."
+if ssh -p $SSH_PORT $HOST "bash $REMOTE_DOCKER_INSTALL_SCRIPT_PATH"; then
+    print_success "Docker installation completed"
+else
+    print_error "Docker installation failed"
+fi
+
+# Send repo
+print_message "Sending repository to remote server"
+if rsync -avz -e "ssh -p $SSH_PORT" "$LOCAL_REPO_DIR" "$HOST:$(dirname "$REMOTE_REPO_DIR")"; then
+    print_success "Repository sent successfully"
+else
+    print_error "Failed send repository"
+fi
+
+# Remotely stop running docker image
+print_message "Stopping and removing existing Docker container"
+echo "Stopping container $DOCKER_CONTAINER_NAME..."
+if ssh -p $SSH_PORT $HOST "docker stop $DOCKER_CONTAINER_NAME 2>/dev/null || echo 'No container to stop'"; then
+    print_success "Container stopped"
+else
+    echo "Warning: Could not stop container. This might be normal for first deployment."
+fi
+
+echo "Removing container $DOCKER_CONTAINER_NAME..."
+if ssh -p $SSH_PORT $HOST "docker rm $DOCKER_CONTAINER_NAME 2>/dev/null || echo 'No container to remove'"; then
+    print_success "Container removed"
+else
+    echo "Warning: Could not remove container. This might be normal for first deployment."
+fi
+
+# Remotely build docker image and run it
+print_message "Building and running Docker container"
+echo "Building Docker image $DOCKER_IMAGE_NAME..."
+if ssh -p $SSH_PORT $HOST "docker build -t $DOCKER_IMAGE_NAME $REMOTE_REPO_DIR"; then
+    print_success "Docker image built successfully"
+else
+    print_error "Failed to build Docker image"
+fi
+
+echo "Running Docker container $DOCKER_CONTAINER_NAME with port $CONTAINER_PORT exposed..."
+if ssh -p $SSH_PORT $HOST "docker run --detach -p $SERVER_LISTENING_PORT:$CONTAINER_PORT --name $DOCKER_CONTAINER_NAME $DOCKER_IMAGE_NAME"; then
+    print_success "Docker container started successfully. Container port $CONTAINER_PORT bound to server TCP port $SERVER_LISTENING_PORT".
+else
+    print_error "Failed to start Docker container"
+fi
+
+print_message "Deployment completed successfully!"
+echo "Application is now running at http://$SSH_HOST:$SERVER_LISTENING_PORT"

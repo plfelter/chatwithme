@@ -1,12 +1,12 @@
-EXPERIENCE PROFESSIONELLE
+EXPERIENCE PROFESSIONELLE DE PIERRE-LOÏC FELTER
 
 
-Auto-formation
-Toulouse (Janvier 2023 -  Avril 2025)
+Freelance
+Toulouse (Juin 2024 -  Avril 2025)
 Développement data et web. A destination des freelance et petites entreprises.
 Sites construits et administrés sur CMS (Wordpress, woocommerce...).
 Bases de données SQLite, MySQL.
-Web dev: NodeJS, Django, HTTP (REST) API, Postman, Python, PHP, JavaScript, HTML, CSS, JSON
+Web dev: FastAPI, Flask, Django, HTMX, HTTP (REST) API, Postman, Python, PHP, JavaScript, HTML, CSS, Javascript, Wordpress
 Excel (VBA) et automatisations avec Python.
 Connections API IA et LLM (ChatGPT, Mistral)
 Configurations réseaux (TCP/IP).
